@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+    <!--配置Handler
+    bean name = tomcat訪問的url
+    <!-&ndash;&gt;-->
+    <!--<bean id="itemsController1" name="/queryItems.action" class="com.ty.controller.ItemsController1"></bean>-->
+
+    <!--<bean id="itemsController2" name="/queryItems3.action" class="com.ty.controller.ItemsController2"></bean>-->
+
+    <!--处理器映射器
+    将bean的name作为url进行查找,需要在配置handler时指定beanname(就是url)
+    -->
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
+
+    <!--簡單的url映射-->
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+        <!--<property name="mappings">-->
+            <!--<props>-->
+                <!--&lt;!&ndash;对itemsController1进行映射,url/queryItems1.action&ndash;&gt;-->
+                <!--<prop key="/queryItems1.action">itemsController1</prop>-->
+                <!--<prop key="/queryItems2.action">itemsController1</prop>-->
+                <!--<prop key="/queryItems3.action">itemsController2</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--处理器适配器
+    所有处理器适配器都实现HandlerAdapter接口
+    -->  
+    <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>-->
+
+    <!--另一个非注解适配器-->
+    <!--<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"></bean>-->
+
+    <!--
+    handler组件扫描
+    -->
+    <context:component-scan base-package="com.ty.controller"></context:component-scan>
+
+
+
+    <!--注解-->
+    <!--映射器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!--适配器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+
+    <!--使用mvc:annotation-driven代替上面的映射器和适配器
+    mvc:annotation-driven默认加载很多参数绑定方法，比如json转换解析器就默认加载
+    -->
+
+    <mvc:annotation-driven>
+
+    </mvc:annotation-driven>
+
+    <!--视图解析器
+    解析jsp解析,默认使用jstl标签,classpath下得有jstl的包
+    -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+</beans>
