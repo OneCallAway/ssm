@@ -22,7 +22,7 @@ public class ItemsController3 {
         //调用service查找数据库,查询商品列表,使用静态数据模拟
         List<Items> itemsList = new ArrayList<>();
         //向list中填充静态数据
-
+        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         Items items_1 = new Items();
         items_1.setItemsName("撒旦所");
         items_1.setPrice(12313);
@@ -44,7 +44,8 @@ public class ItemsController3 {
         modelAndView.addObject("itemsList", itemsList);
 
         //指定视图
-        modelAndView.setViewName("itemsList.jsp");
+        //配置了视图解析器
+        modelAndView.setViewName("itemsList");
 
         return modelAndView;
     }

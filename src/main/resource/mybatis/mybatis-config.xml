@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <!--全局setting-->
+    <!--<settings>-->
+        <!--<setting name="" value=""/>-->
+    <!--</settings>-->
+    
+    <!--配置别名-->
+    <typeAliases>
+        <!--批量别名-->
+        <package name="com.ty.po"/>
+    </typeAliases>
+    <!--加载映射文件
+    resource方法一次只能加载一个
+    由于使用类spring与mybatis的整合,所以不需要配置
+    -->
+    <!--<mappers>-->
+    <!--<mapper resource="com/acey/mapper/BookMapper.xml"/>-->
+    <!--<mapper resource="com/acey/mapper/BookMapperCustom.xml"/>-->
+    <!--</mappers>-->
+
+    <!--通过mapper接口加载映射文件-->
+    <!--需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在一个目录中-->
+    <!--<mapper class="mapper.UserMapper"/>-->
+    <!--<mapper class="mapper.OrdersMapperCustom"></mapper>-->
+
+    <!--批量加载
+    指定mapper接口的包名，mybatis自动扫描包下所有mapper接口进行加载
+    需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在一个目录中
+    -->
+    <!--<mappers>-->
+        <!--<package name=""></package>-->
+    <!--</mappers>-->
+</configuration>
