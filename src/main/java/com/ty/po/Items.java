@@ -4,11 +4,10 @@ import java.util.Date;
 
 /**
  * @author OneCallAway
- * @create 2018-03-29 下午7:53
- * @desc Items实体
+ * @create 2018-05-08 下午6:08
+ * @desc 商品信息
  **/
-
-public class Items{
+    public class Items {
         /** 商品表主键Id */
         private Integer id;
         /** 商品名称 */
@@ -81,6 +80,5 @@ public class Items{
         public void setCreateTime(Date createTime) {
             this.createTime = createTime;
         }
-}
-
+    }
 

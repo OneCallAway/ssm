@@ -67,9 +67,9 @@
             <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
         </tx:attributes>
     </tx:advice>
-    <!--aop-->
-    <!--<aop:config>-->
-        <!--<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.acey.service.impl.*.*(..))"/>-->
-    <!--</aop:config>-->
+    <!--aop切面编程-->
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.ty.service.impl.*.*(..))"/>
+    </aop:config>
 
 </beans>
